@@ -8,5 +8,13 @@ public class Main {
 
     Board board = new Board();
 
+    board.putFigureOnTheBoard(triangle);
+    board.putFigureOnTheBoard(circle);
+    board.putFigureOnTheBoard(rectangle);
+
+    board.removeFigureFromBoard(triangle);
+
+    board.printFigures();
+    System.out.println(board);
   }
 }
