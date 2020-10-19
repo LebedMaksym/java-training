@@ -29,6 +29,21 @@ public class Student extends Human implements Comparable {
   }
 
   @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+
+    Student student = (Student) obj;
+    return this.getLastName().equals(student.getLastName()) &&
+        this.getFirstName().equals(student.getFirstName());
+  }
+
+  @Override
   public String toString() {
     return "Student{" +
         "lastName='" + getLastName() + '\'' +

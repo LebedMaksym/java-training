@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Group implements MilitaryCommision {
-  Student[] group = new Student[5];
+  private Student[] group = new Student[5];
 
   public Group() {
   }
@@ -125,18 +125,18 @@ public class Group implements MilitaryCommision {
     Student[] studentsFiltered = new Student[group.length];
 
     int count = 0;
-    for (int i = 0; i < group.length ; i++) {
+    for (int i = 0; i < group.length; i++) {
       if (group[i].getAge() >= 18 && group[i].getSex() == "male") {
         studentsFiltered[i] = group[i];
-        count ++;
+        count++;
       }
     }
 
     Arrays.sort(studentsFiltered, new LastNameStudentComparator(1));
 
     Student[] adultMaleStudents = new Student[count];
-    for (int i = 0; i < studentsFiltered.length ; i++) {
-      if(studentsFiltered[i] != null) {
+    for (int i = 0; i < studentsFiltered.length; i++) {
+      if (studentsFiltered[i] != null) {
         adultMaleStudents[i] = studentsFiltered[i];
       }
     }
