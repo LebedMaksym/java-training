@@ -1,5 +1,6 @@
 package training.task4;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 class Main {
@@ -23,6 +24,14 @@ class Main {
       group.sort("lastName", -1);
       group.sort("firstName", -1);
 
+      try {
+        group.saveToFile("/home/max/Java/src/source/group.txt");
+        Group groupFromFile = new Group("/home/max/Java/src/source/group.txt");
+        System.out.println(groupFromFile);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+
       System.out.println(Arrays.toString(group.getAdultMaleStudents()));
 
     } catch (GroupIndexOutOfBoundsException e) {
@@ -30,6 +39,5 @@ class Main {
       System.out.println(e.getMessage());
       e.printStackTrace();
     }
-
   }
 }
